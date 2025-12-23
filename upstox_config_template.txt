@@ -1,0 +1,17 @@
+# Upstox API Configuration
+# 
+# IMPORTANT: You need an ACCESS TOKEN (not just API key/secret)
+#
+# How to get your Upstox Access Token:
+# 1. Go to: https://api.upstox.com/
+# 2. Login with your Upstox credentials  
+# 3. Go to your App
+# 4. Click "Generate Token" or use the authorization flow
+# 5. Copy the ACCESS TOKEN (it's a long JWT token)
+#
+# The access token looks like: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
+# (It's much longer than the API key)
+#
+# Paste your ACCESS TOKEN below:
+cb681499-48d1-43a4-8a0e-e724d7b9b837
+

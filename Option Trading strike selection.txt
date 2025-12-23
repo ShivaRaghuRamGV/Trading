@@ -1,0 +1,20 @@
+Step1:
+Step 1: Compute Greek Pressure Scores (Per Strike)
+
+For each option in the chain (focus ±2% strikes):
+
+Normalize Greeks
+Δn = |Delta|
+Γn = Gamma / Spot
+Vn = Vega / IV
+Θn = |Theta| / Premium
+
+Weighted Greek Pressure (GPI)
+GPI = 0.4·Δn + 0.3·Γn + 0.2·Vn − 0.1·Θn
+
+
+Interpretation:
+
+High GPI → movement-sensitive
+
+Low GPI → decay-sensitive

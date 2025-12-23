@@ -1,0 +1,108 @@
+
+======================================================================
+FETCH BUTTON CLICKED - Attempt #1 - 2025-12-21 14:02:56.410219
+======================================================================
+
+
+======================================================================
+ATTEMPTING NSE API FETCH - 2025-12-21 14:02:56.414218
+======================================================================
+[1/5] Checking rate limit...
+✓ Rate limit OK
+[2/5] Validating URLs...
+✓ Base URL validated: https://www.nseindia.com
+[3/5] Fetching cookies from NSE homepage...
+✓ Homepage response: 200
+  Cookies received: 3 cookies
+[4/5] Fetching option chain from: https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY
+[5/5] Option chain API response: 200
+  Response size: 2 bytes
+  Parsing JSON...
+
+✓ NSE API JSON STRUCTURE:
+  Top-level keys: []
+  Data type: <class 'dict'>
+  ❌ NO 'records' KEY FOUND!
+  Full response (first 1000 chars): {}
+
+  Validating API response structure...
+
+❌ VALIDATION ERROR: Invalid API response structure
+Traceback (most recent call last):
+  File "c:\Users\USER\trading\greek_regime_flip_live.py", line 185, in fetch_option_chain
+    self.validator.validate_api_response(data)
+  File "c:\Users\USER\trading\greek_regime_flip_live.py", line 72, in validate_api_response
+    raise ValueError("Invalid API response structure")
+ValueError: Invalid API response structure
+
+======================================================================
+FETCH BUTTON CLICKED - Attempt #1 - 2025-12-21 14:03:18.566107
+======================================================================
+
+
+======================================================================
+ATTEMPTING NSE API FETCH - 2025-12-21 14:03:18.571802
+======================================================================
+[1/5] Checking rate limit...
+✓ Rate limit OK
+[2/5] Validating URLs...
+✓ Base URL validated: https://www.nseindia.com
+[3/5] Fetching cookies from NSE homepage...
+✓ Homepage response: 200
+  Cookies received: 3 cookies
+[4/5] Fetching option chain from: https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY
+[5/5] Option chain API response: 200
+  Response size: 2 bytes
+  Parsing JSON...
+
+✓ NSE API JSON STRUCTURE:
+  Top-level keys: []
+  Data type: <class 'dict'>
+  ❌ NO 'records' KEY FOUND!
+  Full response (first 1000 chars): {}
+
+  Validating API response structure...
+
+❌ VALIDATION ERROR: Invalid API response structure
+Traceback (most recent call last):
+  File "c:\Users\USER\trading\greek_regime_flip_live.py", line 185, in fetch_option_chain
+    self.validator.validate_api_response(data)
+  File "c:\Users\USER\trading\greek_regime_flip_live.py", line 72, in validate_api_response
+    raise ValueError("Invalid API response structure")
+ValueError: Invalid API response structure
+
+======================================================================
+FETCH BUTTON CLICKED - Attempt #2 - 2025-12-21 14:03:39.347503
+======================================================================
+
+
+======================================================================
+ATTEMPTING NSE API FETCH - 2025-12-21 14:03:39.351501
+======================================================================
+[1/5] Checking rate limit...
+✓ Rate limit OK
+[2/5] Validating URLs...
+✓ Base URL validated: https://www.nseindia.com
+[3/5] Fetching cookies from NSE homepage...
+✓ Homepage response: 200
+  Cookies received: 4 cookies
+[4/5] Fetching option chain from: https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY
+[5/5] Option chain API response: 200
+  Response size: 2 bytes
+  Parsing JSON...
+
+✓ NSE API JSON STRUCTURE:
+  Top-level keys: []
+  Data type: <class 'dict'>
+  ❌ NO 'records' KEY FOUND!
+  Full response (first 1000 chars): {}
+
+  Validating API response structure...
+
+❌ VALIDATION ERROR: Invalid API response structure
+Traceback (most recent call last):
+  File "c:\Users\USER\trading\greek_regime_flip_live.py", line 185, in fetch_option_chain
+    self.validator.validate_api_response(data)
+  File "c:\Users\USER\trading\greek_regime_flip_live.py", line 72, in validate_api_response
+    raise ValueError("Invalid API response structure")
+ValueError: Invalid API response structure

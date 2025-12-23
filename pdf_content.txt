@@ -1,0 +1,78 @@
+THE GREEK REGIME FLIP MODEL
+Greeks-Driven Entry–Exit System for NIFTY Options
+1. Model Objective
+The Greek Regime Flip Model (GRFM) is designed to generate systematic entry and exit signals for options
+trading by identifying which option Greek (Delta, Gamma, Vega, Theta) is currently dominating P&L; behavior.
+Trades are entered only when the dominant Greek aligns with the strategy and exited when dominance flips.
+2. Required Inputs
+1
+Underlying spot price (NIFTY 50)
+2
+Option price
+3
+Implied volatility (IV)
+4
+Delta, Gamma, Vega, Theta
+5
+Time to expiry (in years)
+6
+Historical IV and Greek distributions (for percentiles)
+3. Normalized Greeks
+Greeks are normalized to allow comparison across strikes and expiries:
+Delta_n = |Delta|
+Gamma_n = Gamma × Spot
+Vega_n = Vega / max(IV, 0.01)
+Theta_n = |Theta| / Option Price
+4. Greek Dominance Score (GDS)
+Each Greek is assigned a weighted contribution:
+GDS_DELTA = 0.45 × Delta_n
+GDS_GAMMA = 0.40 × Gamma_n
+GDS_VEGA = 0.30 × Vega_n
+GDS_THETA = -0.35 × Theta_n
+The dominant Greek is the one with the highest GDS value at that timestamp.
+5. Market Regime Classification
+The overall market regime is determined using dominant Greeks, IV behavior, and spot movement:
+If GDS_GAMMA > threshold and IV change is small → GAMMA-DRIVEN
+If GDS_VEGA > threshold and IV rising → VEGA-DRIVEN
+If GDS_THETA dominates and spot range-bound → THETA-DRIVEN
+Else → DELTA-DRIVEN
+6. Entry Signals
+6.1 Long Gamma / Vega Breakout
+Conditions:
+ Regime is GAMMA-DRIVEN or VEGA-DRIVEN
+ Delta between 0.45 and 0.55
+ ATM Gamma percentile > 70
+ Theta decay < 1.2% per hour
+ IV increasing by at least 1.2%
+6.2 Vega Expansion (Calendar / Diagonal)
+
+Conditions:
+ Front-month IV lower than back-month IV by at least 2%
+ Spot price stable
+ Vega dominance score high
+6.3 Theta Harvest (Short Premium)
+Conditions:
+ THETA-DRIVEN regime
+ IV percentile above 65
+ Absolute Delta below 0.25
+ Theta decay exceeds 1.8% per hour
+7. Exit Signals (Greek Flip Logic)
+Exit Long Options if:
+ Gamma drops more than 25% from peak
+ IV stops rising for two consecutive bars
+ Theta decay exceeds 2% per hour
+Exit Short Options if:
+ ATM Gamma percentile exceeds 80
+ Spot moves more than 60% of implied move
+ IV expands by more than 1.5%
+8. Position Sizing (Greeks-Based)
+Position size is calculated based on Greek risk rather than fixed lots:
+Risk per trade = 0.5–0.75% of capital
+Long size ∝ Risk / (Theta × 2 + Vega × 1.5)
+9. Dashboard & Agent Integration
+The model outputs structured signals suitable for agentic systems and dashboards, including:
+ Market regime
+ Dominant Greek
+ Entry/exit signal type
+ Strike, expiry, and confidence score
+

@@ -1,0 +1,28 @@
+# Trading Dashboard Requirements
+# Last Updated: December 9, 2025
+
+# Core Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+requests>=2.31.0
+
+# Dashboard & Visualization
+dash>=2.14.0
+plotly>=5.17.0
+
+# Statistical Analysis
+scipy>=1.11.0
+statsmodels>=0.14.0
+
+# VIX Forecasting (GARCH models)
+arch>=6.0.0
+
+# Machine Learning (Options Strategy Selection)
+xgboost>=3.1.0
+scikit-learn>=1.7.0
+
+# Market Data
+yfinance>=0.2.0
+
+# Options Data Processing
+pyarrow>=14.0.0
